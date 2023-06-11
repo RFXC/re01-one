@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>接口大全</title>
+		<script src="./js/jquery-3.3.1.min.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			#main{
+				/* border: 1px solid black; */
+				width: 1110px;
+				height: 660px;
+				margin: 0 auto;
+			}
+			.div-title{
+				border: 2px solid black;
+				width: 1100px;
+				height: 100px;
+				background-color: greenyellow;
+				line-height: 100px;
+				text-align: center;
+			}
+			.div-menu{
+				float: left;
+				border: 1px solid black;
+				width: 300px;
+				height: 560px;
+				background-color: pink;
+			}
+			.menu li{
+				padding: 10px 5px;
+				margin: 0 auto;
+				margin-top: 10px;
+				border-radius: 10px;
+				width: 80%;
+				background-color: skyblue;
+				text-align: center;
+			}
+			
+			.div-content{
+				/* float: left; */
+				border: 1px solid black;
+				width: 800px;
+				height: 560px;
+				background-color: skyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div class="div-title">
+				<h2>
+					接口大全
+					<a class="btn_logout" href="">退出登录</a>
+				</h2>
+			</div>
+			<div class="div-menu">
+				<ul class="menu">
+					<li><a class="menu-item" href="Ip.html" target="iframe-main">查询IP信息</a></li>
+					<li><a class="menu-item" href="News.html" target="iframe-main">查询新闻信息</a></li>
+					<li><a class="menu-item" href="qrCode.html" target="iframe-main">二维码生成</a></li>
+					<li><a class="menu-item" href="video.html" target="iframe-main">小姐姐视频</a></li>
+				</ul>
+			</div>
+			<iframe name="iframe-main" class="div-content"  src="clses.html" frameborder="0" >3</iframe>
+			<!-- 
+				iframe:内联框架,在内部嵌入其他的html页面
+					-src:嵌入的页面的路径
+					-name:设置页面的名字 给超链接的打开提供位置
+			 
+			 ->
+		
+		
+		
+		</div>
+		<script>
+			//点击页面图标，位于哪个页面，哪个页面的图标变红
+			let menuItemNodes=document.querySelectorAll('.menu-item')
+			// for (let menuItemNode of menuItemNodes) {
+			// 	menuItemNode.onclick=function(){
+			// 		this.style.color='red';
+			// 	}
+			// }
+			for (let i = 0; i < menuItemNodes.length; i++) {
+				menuItemNodes[i].onclick=function(){
+					this.style.color='red';
+					
+					for (let j = 0; j< menuItemNodes.length; j++) {
+						if(j==i)
+							continue;
+						else{
+							console.log(j);
+							// alert(j)
+							menuItemNodes[j].style.color='black';
+						}
+					}
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>
